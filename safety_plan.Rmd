@@ -1,6 +1,6 @@
 ---
 title: "Safety Plan"
-author: "Al Irvine"
+author: "Mateo Winterscheidt"
 output:
   pagedown::html_letter:
     self_contained: true
@@ -18,20 +18,12 @@ knit: pagedown::chrome_print
 <br>
 
 ::: from
-Al Irvine\
+Mateo Winterscheidt\
 New Graph Environment\
-[al\@newgraphenvironment](mailto:al@newgraphenvironment){.email}\
-250-777-1518\
+[mateo\@newgraphenvironment](mailto:mateo@newgraphenvironment){.email}\
+672-998-5293\
 Date: `r format(Sys.Date(), "%Y-%m-%d")`
 :::
-
-<!-- Ministry of Environment  -->
-
-<!-- Skeena Region   -->
-
-<!-- 3726 Alfred Ave 1st Floor   -->
-
-<!-- Smithers, BC V0J 2N0   -->
 
 ```{r setup, include = TRUE, echo =FALSE, message=FALSE, warning=FALSE}
 # gitbook_on <- TRUE
@@ -45,19 +37,17 @@ options(knitr.kable.NAN = '--')
 
 source('R/packages.R')
 source('R/functions.R')
-# source('R/private_info.R')
 
-name_project_number <- '2022-056'
-# name_project_number2 <- '2021-040'
-name_project_name <- 'nupqu-elk-cwf'
-name_repo <- 'safety_plan_elk_2022'
+name_project_number <- '2023-054'
+name_project_name <- 'salmo-larl'
+name_repo <- 'safety_plan_salmo_2023'
 name_pdf <- 'safety_plan'
 name_project_complete <- paste0(name_project_number, '-', name_project_name)
 
-link_repo <- paste0('https://newgraphenvironment.github.io/', name_repo, '/')
-link_kml <- paste0('https://github.com/NewGraphEnvironment/', name_repo, '/raw/main/mapping/sites_', name_project_name, '_', format(Sys.Date(), '%Y%m%d'), '_kml_gpx.zip')
-link_pdf <- paste0('https://github.com/NewGraphEnvironment/', name_repo, '/raw/main/docs/', name_pdf, '_', name_project_name, '.pdf')
-link_fieldmaps <- 'https://hillcrestgeo.ca/outgoing/fishpassage/projects/elkr/'
+link_repo <- paste0('https://mateo9569.github.io/', name_repo, '/')
+link_kml <- paste0('https://github.com/Mateo9569/', name_repo, '/raw/main/mapping/sites_', name_project_name, '_', format(Sys.Date(), '%Y%m%d'), '_kml_gpx.zip')
+link_pdf <- paste0('https://github.com/Mateo9569/', name_repo, '/raw/main/docs/', name_pdf, '_', name_project_name, '.pdf')
+#link_fieldmaps <- 'https://hillcrestgeo.ca/outgoing/fishpassage/projects/elkr/'
 
 
 ##this is redundant but allows us to keep the gitbook setting for if we move to a better TOC
@@ -65,46 +55,30 @@ font_set <- 9
 
 
 
-hotel1 <- '1500 McDonald Ave, Fernie, BC V0B 1M1 - Contact Melanie  1-250-423-8759'
-
-
-
-vehicle1 <- '2013 Toyota Tundra black w/flatdeck and yellow can-am quad'
-vehicle2 <- '2007 Taoyota Tacoma - gold with canopy'
+vehicle1 <- '2013 Toyota Tundra black'
 ```
 
 <br>
 
 # `r paste0('Safety Plan - ',name_project_complete)` {.unnumbered .break-after-me}
 
-The latest version of this pdf can be downloaded [here](https://github.com/NewGraphEnvironment/safety_plan_elk_2022/raw/main/docs/safety_plan_nupqu-elk-cwf.pdf).
+The latest version of this pdf can be downloaded [here](https://github.com/Mateo9569/safety_plan_salmo_2022/raw/main/docs/safety_plan_salmo-larl.pdf).
 
-<br>
+A kml file containing the site at the end of Carney Mill Road in Salmo where we are going to carry out a snorkel survey can be downloaded [here](https://github.com/Mateo9569/safety_plan_salmo_2022/raw/main/mapping/Carney.kmz). Another potential survey site in Salmo can be seen on this orthomosaic map that can be accessed [here](https://www.mapsmadeeasy.com/maps/public/d67c01a499be4c30b7d1c74b72a4101b).
 
-A zip file which includes kml (google earth) and gpx (garmin) files of the sites to be potentially assessed can be downloaded [here](https://github.com/NewGraphEnvironment/safety_plan_elk_2022/raw/main/mapping/sites_nupqu-elk-cwf_20220922_kml_gpx.zip). Georeferenced pdf maps can be accessed and downloaded [here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/elkr/).
+**Vehicles**
 
-<br>
+Al and Mateo - `r vehicle1`
 
-A summary of sites to be potentially assessed is included as Table \@ref(tab:tab-sites).  
-
-**Accomodations**
-
-Al - `r vehicle1`:
-
--   `r hotel1`
-
-Mateo - `r vehicle2`:
-
--   `r hotel1`
 
 ```{r info-hospitals}
-hospital_name <- 'Elk Valley Hospital'
-hospital_phone <- '250-423-4453'
-hospital_address <- '1501 5 Ave, Fernie, BC V0B 1M0'
+hospital_name <- 'Kootenay Lake Hospital'
+hospital_phone <- '250-352-3111'
+hospital_address <- '3 View St, Nelson, BC V1L 2V1'
 
-hospital_name2 <- 'Elkford Health Centre - Interior Health Authority'
-hospital_phone2 <- '250-865-2247'
-hospital_address2 <- '212 Alpine Way, Elkford, BC V0B 1H0'
+hospital_name2 <- 'Kootenay Boundary Regional Hospital'
+hospital_phone2 <- '250-368-3311'
+hospital_address2 <- '1200 Hospital Bench, Trail, BC V1R 4M1'
 
 ```
 
@@ -245,12 +219,13 @@ ggmap::ggmap(mybasemap)
   #            aes(x = lon, y = lat, colour = "black", stroke = 10), #https://stackoverflow.com/questions/54803891/custom-shape-in-ggplot-geom-point
   #            show.legend = F)
 
-knitr::asis_output(paste(hospital_name, hospital_address, hospital_phone, sep = ' - '))   
+#knitr::asis_output(paste(hospital_name, hospital_address, hospital_phone, sep = ' - '))   
 ```
 
 <br>
 
-```{r hospital2, fig.cap='my_caption', fig.width=6, eval = T}
+```{r hospital2, fig.cap=my_caption, fig.width=6, eval = T}
+my_caption = paste(hospital_name2, hospital_address2, hospital_phone2, sep = ' - ')
 
 #define the area of the base map by using a bounding box 
 mybasemap <- ggmap::get_map(location = hospital_address2,
@@ -263,14 +238,14 @@ ggmap::ggmap(mybasemap)
   #            aes(x = lon, y = lat, colour = "black", stroke = 10), #https://stackoverflow.com/questions/54803891/custom-shape-in-ggplot-geom-point
   #            show.legend = F)
 
-knitr::asis_output(paste(hospital_name2, hospital_address2, hospital_phone2, sep = ' - ')) 
+#knitr::asis_output(paste(hospital_name2, hospital_address2, hospital_phone2, sep = ' - ')) 
 ```
 
 <br>
 
 ## Field Plan {.unnumbered}
 
-Field work methods will result in products feeding reporting formats such as [here](https://newgraphenvironment.github.io/fish_passage_elk_2020_reporting_cwf/) for 2020 and [here](https://newgraphenvironment.github.io/fish_passage_elk_2021_reporting/) for 2021. Still picking away at 2021 and just updating version IDs as I get through it and will generally follow procedures in:
+Field work methods will generally follow procedures in:
 
 -   [fish passage assessments](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]
 
@@ -340,157 +315,6 @@ knitr::include_graphics("fig/flow-check-in-fail.png")
 
 ```
 
-
-```{r load-raw, results='hide', eval=F}
-# load the target sites from the spreadsheet from mark, turn into a spatial object and burn to the mergin repo
-# this is turned to eval=false since we only need to run it once 
-
-crs <- 26911 
-
-sites_raw <- readr::read_csv('data/Site details for Mark.csv') %>% 
-  janitor::clean_names() %>% 
-  sf::st_as_sf(coords = c("easting", "northing"), crs = crs, remove = F)
-
-
-# which project?
-mergin_name <- 'bcfishpass_elkr_20220904'
-
-# burn the geopackage into the project
-sites_raw %>% 
-  sf::st_write(paste0(
-    '../../gis/mergin/',
-    mergin_name,
-    '/sample_site_options.gpkg'
-  ),
-  delete_dsn = T
-  )
-
-# grab the latest version of the fiss_site and pscis forms and transfer them to our mergin project along with their qmls so they can be styled
-
-# get the forms from where
-mergin_project_from <- 'bcfishpass_skeena_20220823'
-
-# list the tables in the mergin projectj
-list.files(paste0(
-  '../../gis/mergin/',
-  mergin_project_from
-),
-pattern = glob2rx('form_*.gpkg'))
-
-# read in the old form and burn to the new
-sf::st_read(paste0(
-  '../../gis/mergin/',
-  mergin_project_from,
-  '/form_pscis_202209061414.gpkg'
-)) %>% 
-  # convert crs
-  sf::st_transform(crs = crs) %>% 
-  # burn to the new project
-  sf::st_write(paste0(
-            '../../gis/mergin/',
-            mergin_name, 
-            '/form_pscis_',
-            format(lubridate::now(), "%Y%m%d"),
-            '.gpkg'
-          ),
-  delete_dsn = T)
-
-# move the latest version of the qml for the pscis_form from  dff-2022 where we now keep it.  
-qml <- 'form_pscis.qml'
-
-file.copy(from = paste0('../dff-2022/data/', qml),
-          to = paste0(
-            '../../gis/mergin/',
-            mergin_name, 
-            '/',
-            qml),
-          overwrite = T)
-
-```
-
-```{r load-mergin, results='hide'}
-# grab the geopackage from the mergin project 
-
-# which project? needed to be redundant becouse last chunk is off
-mergin_name <- 'bcfishpass_elkr_20220904'
-
-
-table_sites <- sf::st_read(
-  paste0('../../gis/mergin/',
-         mergin_name,
-         '/sample_site_options.gpkg')
-  )
-
-```
-
-```{r gpx, results='hide'}
-
-dir.create('mapping')
-
-##remove the old gpx
-files_to_delete <- paste0("mapping/", list.files(path = "mapping/", pattern = "\\.gpx$"))
-file.remove(files_to_delete)
-
-#make a gpx file 
-table_sites %>% 
-  mutate(name = id %>% str_replace_all('[ ()]', '_'),
-         desc = paste0(comments, ' ', ktunaxa_response)) %>% 
-  # filter(source == 'morice' | source == 'cwf') %>% ##of just Morice and CWF
-  select(name, desc,  geom) %>% 
-  write_sf(dsn = paste0("mapping/sites_", name_project_name, '_', format(Sys.Date(), "%Y%m%d"), ".gpx"), driver="GPX",
-           dataset_options="GPX_USE_EXTENSIONS=yes", delete_dsn = TRUE)
-
-
-```
-
-```{r kml, results='hide', eval = T}
-
-##remove the old kml
-files_to_delete <- paste0("mapping/", list.files(path = "mapping/", pattern = "\\.kml$"))
-file.remove(files_to_delete)
-
-
-##make a kml for adding the georef pdf and sharing with stakeholders
-
-df <- table_sites %>%
-  mutate(name = id) %>% 
-  mutate(shape = 'http://maps.google.com/mapfiles/kml/paddle/red-blank.png',
-         color = NA_character_,
-         label = NA_character_) %>% 
-  dplyr::group_split(id)  %>% 
-  purrr::map(fpr::fpr_make_html_tbl) %>%
-  dplyr::bind_rows()
-
-
-sites_kml <- as(df, 'Spatial')
-
-# shape = "http://maps.google.com/mapfiles/kml/pal2/icon18.png"
-
-
-
-kml_open(paste0("mapping/sites_", name_project_name, '_', format(Sys.Date(), "%Y%m%d"), '.kml'))
-kml_layer(sites_kml, colour = '#ff7f00', shape = sites_kml$shape, labels = sites_kml$name, 
-          html.table = sites_kml$html_tbl,
-          z.scale = 2, LabelScale = 1, size = 1.5)  ##I don't see the label
-kml_close(paste0("mapping/sites_", name_project_name, '_', format(Sys.Date(), "%Y%m%d"), '.kml'))
-
-
-
-
-```
-
-```{r zip-together, results='hide'}
-##now we will zip up the kml files in the data folder and rename with kmz
-##remove the old zip
-files_to_delete <- paste0("docs/", list.files(path = "docs/", pattern = "\\.zip$"))
-file.remove(files_to_delete)
-
-
-
-files_to_zip <- paste0("mapping/", list.files(path = "mapping/", pattern = "\\.kml$|.gpx$"))  ##this will zip all kmls in file so watch out
-zip::zipr(paste0("mapping/sites_", name_project_name, '_', format(Sys.Date(), "%Y%m%d"), '_kml_gpx.zip'), files = files_to_zip)  ##it does not work to zip to kmz!!
-```
-
 <!-- `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br><br><br><br><br>")` -->
 
 ```{r map-prep, eval=F}
@@ -531,26 +355,5 @@ mymap
 ```
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>")`
-
-```{r tab-sites}
-table_sites %>% 
-  sf::st_drop_geometry() %>% 
-  arrange(id) %>% 
-  select(id, 
-         Stream = stream_name, 
-         # watershed_code_50k, 
-         # watershed_code_20k, 
-         easting, 
-         northing, 
-         comments
-         ) %>% 
-  kable(caption = 'Potential sample locations.', booktabs = T) %>%
-  kableExtra::kable_styling(c("condensed"),
-                            full_width = T,
-                            font_size = font_set)
-  # kableExtra::column_spec(column = c(7), width_max = '1.5in') %>% 
-  # # kableExtra::column_spec(column = c(3,4,7), width_min = '1.0in') %>% 
-  # kableExtra::column_spec(column = c(8), width_max = '2.0in')
-```
 
 # References {.unnumbered}
