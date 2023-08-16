@@ -64,7 +64,18 @@ vehicle1 <- '2013 Toyota Tundra black'
 
 The latest version of this pdf can be downloaded [here](https://github.com/Mateo9569/safety_plan_salmo_2022/raw/main/docs/safety_plan_salmo-larl.pdf).
 
-A kml file containing the site at the end of Carney Mill Road in Salmo where we are going to carry out a snorkel survey can be downloaded [here](https://github.com/Mateo9569/safety_plan_salmo_2022/raw/main/mapping/Carney.kmz). Another potential survey site in Salmo can be seen on this orthomosaic map that can be accessed [here](https://www.mapsmadeeasy.com/maps/public/d67c01a499be4c30b7d1c74b72a4101b).
+A kml file containing the location of site 1 at the end of Carney Mill Road in Salmo where we are going to carry out a snorkel survey can be downloaded [here](https://github.com/Mateo9569/safety_plan_salmo_2022/raw/main/mapping/Carney.kmz). Site 2 in Salmo can be seen on this orthomosaic map that can be accessed [here](https://www.mapsmadeeasy.com/maps/public/d67c01a499be4c30b7d1c74b72a4101b). A table with site descriptions and locations is found below.
+
+```{r site-details}
+
+site_details <- read.csv('data/site_details.csv')
+
+site_details %>% 
+  kable(caption = 'Site Locations') %>% 
+  kableExtra::kable_styling(c("condensed", "responsive"),
+                              full_width = T,
+                              font_size = font_set)
+```
 
 **Vehicles**
 
@@ -245,7 +256,12 @@ ggmap::ggmap(mybasemap)
 
 ## Field Plan {.unnumbered}
 
-Field work methods will generally follow procedures in:
+The primary goals of what we are doing in this project include:
+
+* snorkel survey to determine fish distribution and density
+* UAV survey to map fish habitat
+
+General Field work methods will generally follow procedures in:
 
 -   [fish passage assessments](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]
 
@@ -254,10 +270,6 @@ Field work methods will generally follow procedures in:
 <br>
 
 Presence/absence of fish, species composition/density and distribution limits can be useful for prioritizing which crossings are a best fit for fish passage restoration and help inform follow up monitoring so electrofishing and minnowtrapping may be conducted. Standard Fish and Fish Habitat Inventory Standard Field Form [site cards](https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/laws-policies-standards-guidance/inventory-standards/aquatic-ecosystems) are used to gather habitat data. Field guide is [here](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/sitecard20.pdf)
-
-<br>
-
-We have PIT tagging equipment so we could consider [tagging](https://www.youtube.com/watch?v=9CKZ9yaS5o8) fish captured at electrofishing sites to help us better understand population sizes and fish movement upstream and downstream of sites over the years.
 
 <br>
 
@@ -275,7 +287,7 @@ A guide to freshwater fish id such as @mcphail_carveth1993FieldKey can be useful
 
 ### Check In Procedures {-}
 
-Call, text or inreach Tara Stark (2505059854) each morning to share the plan for the day (i.e. name of roads and sites). Check in time is before 7 pm each evening although we regularly check in throughout the day (ex. at arrival to site, 1pm and 4pm) on the inreach or by text and report position/provide updates.
+Call, text or inreach Tara Stark (2505059854) in the morning to share the plan for the day (i.e. name of roads and sites). Check in time is before 7 pm each evening although we regularly check in throughout the day (ex. at arrival to site, 1pm and 4pm) on the inreach or by text and report position/provide updates.
 
 <br>
 
